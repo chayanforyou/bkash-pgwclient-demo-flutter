@@ -67,11 +67,9 @@ try {
 }
 ```
 
-## Watch the Video Demo
+## Video Demo
 
-<div align="center">
-  <video src="https://github.com/chayanforyou/bkash-pgwclient-demo-flutter/raw/master/screenshots/bkash_demo.webm" controls></video>
-</div>
+https://github.com/chayanforyou/bkash-pgwclient-demo-flutter/assets/12654289/9f81977b-b6f8-45c2-9746-93f1a1ad987c
 
 ## Contributing
 
