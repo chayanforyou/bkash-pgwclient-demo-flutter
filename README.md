@@ -70,7 +70,7 @@ try {
 ## Watch the Video Demo
 
 <div align="center">
-  <video src="https://github.com/chayanforyou/bkash-pgwclient-demo-flutter/tree/master/screenshots/bkash_demo.webm" controls></video>
+  <video src="https://github.com/chayanforyou/bkash-pgwclient-demo-flutter/raw/master/screenshots/bkash_demo.webm" controls></video>
 </div>
 
 ## Contributing
