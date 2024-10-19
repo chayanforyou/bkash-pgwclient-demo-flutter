@@ -16,11 +16,11 @@ A simple implementation of bKash payment gateway in flutter with tokenized check
 Official link for API documentation and demo checkout
 
 * [bKash API Specifications](https://developer.bka.sh/v1.2.0-beta/reference)
-* [bKash Payment Checkout Demo](https://merchantdemo.sandbox.bka.sh/frontend/checkout)
+* [bKash Checkout Demo](https://merchantdemo.sandbox.bka.sh)
 
 ### Production
 
-Replace the credentials for production uses in `app_constants.dart` with your own bKash credentials and change the flag `isProduction = true`.
+Replace the credentials for production uses in `bkash_credentials.dart` with your own bKash credentials and change the parameter `isSandbox: false`.
 
 ```dart
   static const String username = 'app_username';
@@ -35,22 +35,25 @@ Basically this the implementation of payment without an agreement. Use the `make
 #### Request
 
 ```dart
-final result = await makePayment(
-    amount: '50.0',
-    payerReference: '01770618575',
-    merchantInvoiceNumber: 'invoice02',
+final result = await bkashApi.makePayment(
+    context: context,
+    amount: 50.0,
+    payerReference: "01770618575",
+    merchantInvoiceNumber: "INV-123",
+    isSandbox: false,
   );
 ```
 #### Response
 
 ```json
 {
-    "trxId": "BBE40GR28Q",
-    "paymentId": "TR0011QoLvETc1707888323866",
-    "executeTime": "2024-02-14T11:25:40:749",
-    "payerReference": "01770618575",
-    "customerMsisdn": "01770618575",
-    "merchantInvoiceNumber": "invoice02"
+  "amount": "50.0",
+  "trxId": "BJJ90KGFBH",
+  "paymentId": "TR0011HjY1p6A1729311405472",
+  "payerReference": "01770618575",
+  "customerMsisdn": "01770618575",
+  "merchantInvoiceNumber": "INV-123",
+  "paymentExecuteTime": "2024-10-19T10:17:14:333"
 }
 ```
 
