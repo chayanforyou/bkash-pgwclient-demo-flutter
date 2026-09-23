@@ -38,7 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Amount', style: TextStyle(fontWeight: FontWeight.bold)),
+                  const Text(
+                    'Amount',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   const SizedBox(height: 8),
                   TextFormField(
                     controller: _amountController,
@@ -46,16 +49,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: const InputDecoration(
                       isDense: true,
                       hintText: "1500",
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.pink, width: 1.5),
-                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Text('Phone Number', style: TextStyle(fontWeight: FontWeight.bold)),
+                  const Text(
+                    'Phone Number',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   const SizedBox(height: 8),
                   TextFormField(
                     controller: _phoneController,
@@ -63,16 +63,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: const InputDecoration(
                       isDense: true,
                       hintText: "01700000000",
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.pink, width: 1.5),
-                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Text('Invoice Number', style: TextStyle(fontWeight: FontWeight.bold)),
+                  const Text(
+                    'Invoice Number',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   const SizedBox(height: 8),
                   TextFormField(
                     controller: _invoiceController,
@@ -80,12 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: const InputDecoration(
                       isDense: true,
                       hintText: "invoice01",
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.pink, width: 1.5),
-                      ),
                     ),
                   ),
                   const SizedBox(height: 40),
@@ -100,7 +91,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         String phoneNumber = _phoneController.text.trim();
                         String invoiceNumber = _invoiceController.text.trim();
                         if (amount.isEmpty) {
-                          Utils.showSnackBar(message: "Amount is empty. You can't pay through bkash.");
+                          Utils.showSnackBar(
+                            message:
+                                "Amount is empty. You can't pay through bkash.",
+                          );
                           return;
                         }
 
@@ -116,7 +110,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
                           hideLoader();
                           log(result.toString());
-                          Utils.showSnackBar(message: '(Payment Successful) trxId: ${result.trxId}');
+                          Utils.showSnackBar(
+                            message:
+                                '(Payment Successful) trxId: ${result.trxId}',
+                          );
                         } on PaymentException catch (e) {
                           hideLoader();
                           Utils.showSnackBar(message: e.message);
@@ -127,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         }
                       },
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
